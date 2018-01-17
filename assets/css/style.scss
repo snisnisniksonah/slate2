@@ -4,7 +4,8 @@ body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
 #main_content_wrap h1, #main_content_wrap h2 {
     position: sticky;
-    width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     z-index: 1;
     top: 0px;
     background: #f2f2f2;
