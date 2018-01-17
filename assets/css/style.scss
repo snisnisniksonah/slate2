@@ -2,7 +2,7 @@
 ---
 body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
-h2 {
+h1, h2 {
     position: sticky;
     z-index: 1;
     top: 0px;
