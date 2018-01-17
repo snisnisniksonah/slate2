@@ -2,117 +2,172 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Markdown Architectural Decision Records
 
-[Link to another page](another-page).
+> "Markdown Architectural Decision Records" (MADR) `[ˈmæɾɚ]` – architectural decisions that [matter `[ˈmæɾɚ]`](https://en.wiktionary.org/wiki/matter#Pronunciation).
 
-There should be whitespace between paragraphs.
+An [Architectural Decision (AD)](https://en.wikipedia.org/wiki/Architectural_decision) is a software design choice that addresses a functional or non-functional requirement that is architecturally significant. 
+This might, for instance, be a technology choice (e.g., Java vs. JavaScript), a choice of the IDE (e.g., IntelliJ vs. Eclipse IDE), a choice between a library (e.g., [SLF4J](https://www.slf4j.org/) vs [java.util.logging](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html)), or a decision on features (e.g., infinite undo vs. limited undo).
+Do not take the term "architecture" too serious or interpret it too strong.
+As the examples illustrate, any decision might have impact on the architecture somehow are architectural decisions.
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+It should be as easy as possible to
+a) write down the decisions and
+b) to version the decisions.
 
-# [](#header-1)Header 1
+This repository offers a solution to record architectural decisions.
+It provides provides an initial directory structure and files to document Architectural Decisions using **M**arkdown and **A**rchitectural **D**ecision **R**ecords.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+The decisions are placed in the folder `docs/adr` to
+1) Enable [GitHub pages](https://pages.github.com/) to render it using in the web.
+   See <https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/> for more information.
+2) Separate the architectural decisions from other documentation
 
-## [](#header-2)Header 2
+## Table of Contents
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+<!-- toc -->
 
-### [](#header-3)Header 3
+- [The Template](#the-template)
+- [Example](#example)
+- [Apply It To Your Project](#apply-it-to-your-project)
+  * [Initialization](#initialization)
+  * [Create a new ADR](#create-a-new-adr)
+- [Background Information](#background-information)
+- [License](#license)
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
+<!-- tocstop -->
+
+## The Template
+
+The template reads as follows:
+
+```markdown
+# *[short title of solved problem and solution]*
+
+**User Story:** *[ticket/issue-number]* <!-- optional -->
+
+*[context and problem statement]*
+*[decision drivers | forces]* <!-- optional -->
+
+## Considered Alternatives
+
+* *[alternative 1]*
+* *[alternative 2]*
+* *[alternative 3]*
+* *[...]* <!-- numbers of alternatives can vary -->
+
+## Decision Outcome
+
+* Chosen Alternative: *[alternative 1]*
+* *[justification. e.g., only alternative, which meets k.o. criterion decision driver | which resolves force force | ... | comes out best (see below)]*
+* *[consequences. e.g., negative impact on quality attribute, follow-up decisions required, ...]* <!-- optional -->
+
+## Pros and Cons of the Alternatives <!-- optional -->
+
+### *[alternative 1]*
+
+* `+` *[argument 1 pro]*
+* `+` *[argument 2 pro]*
+* `-` *[argument 1 con]*
+* *[...]* <!-- numbers of pros and cons can vary -->
+
+### *[alternative 2]*
+
+* `+` *[argument 1 pro]*
+* `+` *[argument 2 pro]*
+* `-` *[argument 1 con]*
+* *[...]* <!-- numbers of pros and cons can vary -->
+
+### *[alternative 3]*
+
+* `+` *[argument 1 pro]*
+* `+` *[argument 2 pro]*
+* `-` *[argument 1 con]*
+* *[...]* <!-- numbers of pros and cons can vary -->
 ```
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+The template is available at [template/template.md](template/template.md).
+
+
+## Example
+
+```markdown
+# Use Markdown Architectural Decision Records (MADR)
+
+Should we record the architectural decisions made in this project?
+And if we do, how to structure these recordings?
+
+## Considered Alternatives
+
+* [MADR](https://github.com/adr/madr) - Markdown Architectural Decision Records
+* [Michael Nygard's template](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions) - The first incarnation of the term "ADR". Maintainable by [adr-tools](https://github.com/npryce/adr-tools).
+* [Sustainable Architectural Decisions](https://www.infoq.com/articles/sustainable-architectural-design-decisions) - The Y-Statements
+* [DecisionRecord](https://github.com/schubmat/DecisionCapture) - Agile records by [@schubmat](https://github.com/schubmat/)
+* Other templates listed at <https://github.com/joelparkerhenderson/architecture_decision_record>
+* No records
+
+## Decision Outcome
+
+* Chosen Alternative: MADR
+* The MADR template is lean and fits our development style.
 ```
 
-#### [](#header-4)Header 4
+The example is rendered at [template/0000-use-markdown-architectural-decision-records.md](template/0000-use-markdown-architectural-decision-records.md)
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+For the MADR project itself, all ADRs are exist at [docs/adr/](docs/adr/).
 
-##### [](#header-5)Header 5
+## Apply It To Your Project
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+### Initialization
 
-###### [](#header-6)Header 6
+Create folder `docs/adr` in your project.
+Copy all files in `template` from the MADR project to the folder `docs/adr` in your project.
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+For instance, using `npm`, this can be done using the following command:
 
-### There's a horizontal rule below this.
+```sh
+$ npm install madr && mkdir -p docs/adr && cp node_modules/madr/template/* docs/adr/
+```
 
-* * *
+### Create a new ADR
 
-### Here is an unordered list:
+Manual approach:
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+1. Copy `template.md` to `NNNN-title-with-dashes.md`, where `NNNN` indicates the next number in sequence.
+2. Edit `NNNN-title-with-dashes.md`.
+3. Update `index.md`, e.g., by executing `adr-log -d .`
+   You can get adr-log from <https://github.com/adr/adr-log>.
 
-### And an ordered list:
+We are working to enhance an adr tool (such as
+[adr-j](https://github.com/adoble/adr-j),
+[adr-tools](https://github.com/npryce/adr-tools), or
+[adr](https://www.npmjs.com/package/adr))
+to provide support for MADR.
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+## Background Information
 
-### And a nested list:
+The Y-Statements (presented as "[Sustainable Architectural Design Decisions](https://www.infoq.com/articles/sustainable-architectural-design-decisions)") are the most prominent alternative of this template.
+They are even shorter as their minimal form is just one sentence:
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+```
+In the context of <use case/user story u>,
+facing <concern c>
+we decided for <option o>
+and neglected <other options>,
+to achieve <system qualities/desired consequences>,
+accepting <downside d/undesired consequences>,
+because <additional rationale>.
+```
 
-### Small image
+Both MADR and the Y-Statements can embedded in Java code using the [e-adr library](https://github.com/adr/e-adr).
 
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
+For more information on ADRs check <http://adr.github.io>.
 
 
-### Definition lists can be used with HTML syntax.
+## License
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+License: [CC0](https://creativecommons.org/share-your-work/public-domain/cc0)
+
 
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
