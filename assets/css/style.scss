@@ -3,11 +3,6 @@
 body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
 h2 {
-    position : fixed;
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -o-sticky;
-    position: -ms-sticky;
     position: sticky;
     z-index: 1;
     top: 0px;
