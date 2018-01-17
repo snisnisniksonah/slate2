@@ -2,11 +2,8 @@
 ---
 body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
-#header_wrap {
+.sticky {
     position : fixed;
     top: 0;
-    z-index:1;
 }
-#main_content_wrap {
-    padding-top: 200px;
-}
+
