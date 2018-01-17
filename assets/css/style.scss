@@ -2,7 +2,7 @@
 ---
 body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
-.sticky {
+h2 {
     position : fixed;
     position: -webkit-sticky;
     position: -moz-sticky;
@@ -11,7 +11,5 @@ body { margin:0; padding:0; }
     position: sticky;
     z-index: 1;
     top: 0px;
-}
-h2.sticky {
     background: #f2f2f2;
 }
