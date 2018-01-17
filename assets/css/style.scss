@@ -2,15 +2,10 @@
 ---
 body { margin:0; padding:0; }
 @import "jekyll-theme-slate";
-#main_content_wrap h1 {
+#main_content_wrap h1, #main_content_wrap h2 {
     position: sticky;
     z-index: 1;
     top: 0px;
     background: #f2f2f2;
 }
-#main_contentwrap h2 {
-    position: sticky;
-    z-index: 2;
-    top: 0px;
-    background: #f2f2f2;
-}
+
