@@ -37,7 +37,7 @@ The decisions are placed in the folder `docs/adr` to
 
 <!-- tocstop -->
 
-## The Template   and make this header really really really fucking loooooooooooooooooööööööööööööööööööööööööööööööööööööööööööööööööööööoooooooooooooong
+## The Template
 
 The template reads as follows:
 
