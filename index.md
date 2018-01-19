@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# {testing} Markdown Architectural Decision Records
+# Markdown Architectural Decision Records
 
 > "Markdown Architectural Decision Records" (MADR) `[ˈmæɾɚ]` – architectural decisions that [matter `[ˈmæɾɚ]`](https://en.wiktionary.org/wiki/matter#Pronunciation).
 
