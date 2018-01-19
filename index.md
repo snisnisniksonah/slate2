@@ -37,7 +37,7 @@ The decisions are placed in the folder `docs/adr` to
 
 <!-- tocstop -->
 
-## The Template
+## The Template   and make this header really really really fucking loooooooooooooooooööööööööööööööööööööööööööööööööööööööööööööööööööööoooooooooooooong
 
 The template reads as follows:
 
@@ -116,7 +116,7 @@ The example is rendered at [template/0000-use-markdown-architectural-decision-re
 
 For the MADR project itself, all ADRs are exist at [docs/adr/](docs/adr/).
 
-## Apply It To Your Project  and make this header really really really fucking loooooooooooooooooööööööööööööööööööööööööööööööööööööööööööööööööööööoooooooooooooong
+## Apply It To Your Project
 
 ### Initialization
 
